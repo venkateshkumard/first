@@ -19,6 +19,7 @@ public class FirstController {
 	
 	 @GetMapping("/")
 	    public String home() {
+		 String message;   
 		 return "Welcome to Azure App service deployment via CI CD";
 	    }
 }
