@@ -16,4 +16,9 @@ public class FirstController {
 		 LOGGER.info("message={}", "After Calling FirstController greeting::"+message);
 	        return "Hello  "+ message;
 	    }
+	
+	 @GetMapping("/")
+	    public String home() {
+		 return "Welcome to Azure App service deployment via CI CD";
+	    }
 }
