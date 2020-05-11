@@ -15,7 +15,8 @@ steps:
   inputs:
     SonarCloud: 'spring'
     organization: 'springbootvenkat'
-    scannerMode: 'Other'
+    scannerMode: 'CLI'
+    configMode: 'file'
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
