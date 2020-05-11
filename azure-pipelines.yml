@@ -14,9 +14,8 @@ steps:
   inputs:
     SonarCloud: 'spring'
     organization: 'springbootvenkat'
-    scannerMode: 'MSBuild'
-    projectKey: 'test'
-    projectName: 'scantest'
+    scannerMode: 'CLI'
+    configMode: 'file'
 
 - task: Maven@3
   inputs:
