@@ -20,7 +20,7 @@ steps:
       # Additional properties that will be passed to the scanner, 
       # Put one key=value per line, example:
       # sonar.exclusions=**/*.bin
-      sonar.sources=src/**/*.*
+      #sonar.sources=src/**/*.*
       sonar.inclusions=$(Build.ArtifactStagingDirectory)/**/*.class
       sonar.inclusions=$(Build.ArtifactStagingDirectory)/**/*.java
       sonar.projectKey=com.example:venkatfirst
@@ -38,6 +38,13 @@ steps:
 - task: CopyFiles@2
   inputs:
     SourceFolder: 'target'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
