@@ -35,6 +35,13 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
+- task: CopyFilesOverSSH@0
+  inputs:
+    sshEndpoint: 'venkateshkumar7.centralus.cloudapp.azure.com'
+    sourceFolder: 'target'
+    contents: '*.jar'
+    targetFolder: '/home/venkateshkumard/jar_folder/'
+    readyTimeout: '20000'
 - task: CopyFiles@2
   inputs:
     SourceFolder: 'target'
