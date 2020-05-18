@@ -1,8 +1,8 @@
 spring:
   application:
     name: venkatfirst 
-#server:
- # port: 2222
+server:
+  port: 80
   
 security:
   basic:
