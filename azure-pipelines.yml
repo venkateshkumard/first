@@ -47,7 +47,7 @@ steps:
   inputs:
     sshEndpoint: 'venkateshkumar7.centralus.cloudapp.azure.com'
     runOptions: 'inline'
-    inline: "/bin/kill $(ps -ef | grep 'venkatfirst-0.0.1-SNAPSHOT' | grep -v grep | awk '{print $2}')"
+    inline: 'bash ./jar_folder/stopfirst.sh'
     readyTimeout: '20000'
 #- task: SSH@0
   #inputs:
