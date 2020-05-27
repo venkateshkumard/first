@@ -46,9 +46,10 @@ steps:
 - task: SSH@0
   inputs:
     sshEndpoint: 'venkateshkumar7.centralus.cloudapp.azure.com'
-    runOptions: 'inline'
-    inline: 'bash ./jar_folder/stopfirst.sh'
+    runOptions: 'script'
+    scriptPath: './jar_folder/stopfirst.sh'
     readyTimeout: '20000'
+
 #- task: SSH@0
   #inputs:
     #sshEndpoint: 'venkateshkumar7.centralus.cloudapp.azure.com'
