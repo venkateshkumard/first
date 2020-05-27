@@ -47,7 +47,7 @@ steps:
   inputs:
     sshEndpoint: 'venkateshkumar7.centralus.cloudapp.azure.com'
     runOptions: 'commands'
-    commands: 'cd jar_folder;pwd;bash ./stopfirst.sh'
+    commands: 'ls -lrt;cd jar_folder;pwd;bash ./stopfirst.sh'
     readyTimeout: '20000'
 - task: CopyFilesOverSSH@0
   inputs:
