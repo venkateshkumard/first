@@ -38,6 +38,7 @@ steps:
     goals: 'package -Dmaven.test.skip=true'
     sonarQubeRunAnalysis: true
 
+
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
@@ -47,6 +48,13 @@ steps:
     sourceFolder: 'target'
     contents: '*.jar'
     targetFolder: '/home/venkateshkumard/jar_folder/'
+    readyTimeout: '20000'
+
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'venkateshkumar7.centralus.cloudapp.azure.com'
+    runOptions: 'script'
+    scriptPath: '/home/venkateshkumard/jar_folder/startfirst.sh'
     readyTimeout: '20000'
 - task: CopyFiles@2
   inputs:
