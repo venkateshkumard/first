@@ -25,23 +25,23 @@ steps:
       ##sonar.inclusions=$(Build.ArtifactStagingDirectory)/**/*.class
       ##sonar.inclusions=$(Build.ArtifactStagingDirectory)/**/*.java
       ##sonar.projectKey=com.example:venkatfirst
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    #goals: 'package'
-    goals: 'package -Dmaven.test.skip=true'
-    sonarQubeRunAnalysis: true
+#- task: Maven@3
+  #inputs:
+    #mavenPomFile: 'pom.xml'
+    #mavenOptions: '-Xmx3072m'
+    #javaHomeOption: 'JDKVersion'
+    #jdkVersionOption: '1.8'
+    #jdkArchitectureOption: 'x64'
+    #publishJUnitResults: true
+    #testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    ##goals: 'package'
+    #goals: 'package -Dmaven.test.skip=true'
+    #sonarQubeRunAnalysis: true
 
 
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
+#- task: SonarCloudPublish@1
+  #inputs:
+    #pollingTimeoutSec: '300'
 
 - task: SSH@0
   inputs:
