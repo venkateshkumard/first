@@ -43,12 +43,6 @@ steps:
   inputs:
     pollingTimeoutSec: '300'
 
-- task: SSH@0
-  inputs:
-    sshEndpoint: 'venkateshkumar7.centralus.cloudapp.azure.com'
-    runOptions: 'script'
-    scriptPath: './jar_folder/stopfirst.sh'
-    readyTimeout: '20000'
 
 #- task: SSH@0
   #inputs:
@@ -64,12 +58,12 @@ steps:
     targetFolder: '/home/venkateshkumard/jar_folder/'
     readyTimeout: '20000'
 
-- task: SSH@0
-  inputs:
-    sshEndpoint: 'venkateshkumar7.centralus.cloudapp.azure.com'
-    runOptions: 'commands'
-    commands: 'bash ./jar_folder/startfirst.sh'
-    readyTimeout: '20000'
+#- task: SSH@0
+  #inputs:
+    #sshEndpoint: 'venkateshkumar7.centralus.cloudapp.azure.com'
+    #runOptions: 'commands'
+    #commands: 'bash ./jar_folder/startfirst.sh'
+    #readyTimeout: '20000'
 - task: CopyFiles@2
   inputs:
     SourceFolder: 'target'
