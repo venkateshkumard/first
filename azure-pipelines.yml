@@ -47,7 +47,7 @@ steps:
   inputs:
     sshEndpoint: 'venkateshkumar7.centralus.cloudapp.azure.com'
     runOptions: 'commands'
-    commands: 'bash ./home/venkateshkumard/jar_folder/stopfirst.sh'
+    commands: 'cd jar_folder;sh stopfirst.sh'
     readyTimeout: '20000'
 - task: CopyFilesOverSSH@0
   inputs:
@@ -61,7 +61,7 @@ steps:
   inputs:
     sshEndpoint: 'venkateshkumar7.centralus.cloudapp.azure.com'
     runOptions: 'commands'
-    commands: 'bash ./home/venkateshkumard/jar_folder/startfirst.sh'
+    commands: 'cd jar_folder;sh startfirst.sh'
     readyTimeout: '20000'
 - task: CopyFiles@2
   inputs:
